@@ -1,23 +1,33 @@
 package br.com.alura.screenmatch.model;
 
-import jakarta.persistence.Transient;
-
 public enum Categoria {
-    ACAO("Action"),
-    ROMANCE("Romance"),
-    COMEDIA("Comedy"),
-    DRAMA("Drama"),
-    CRIME("Crime"),
-    BIOGRAPHY("Biography");
-    private String categoriaOmdb;
+    ACAO("Action", "Ação"),
+    ROMANCE("Romance", "Romance"),
+    COMEDIA("Comedy", "Comédia"),
+    DRAMA("Drama", "Drama"),
+    CRIME("Crime", "Crime"),
+    BIOGRAPHY("Biography", "Biografia");
 
-    Categoria(String categoriaOmdb) {
+    private String categoriaOmdb;
+    private String categoriaPortugues;
+
+    Categoria(String categoriaOmdb, String categoriaPortugues) {
         this.categoriaOmdb = categoriaOmdb;
+        this.categoriaPortugues = categoriaPortugues;
     }
 
     public static Categoria fromString(String text) {
         for (Categoria categoria : Categoria.values()) {
             if (categoria.categoriaOmdb.equalsIgnoreCase(text)) {
+                return categoria;
+            }
+        }
+        throw new IllegalArgumentException("Nenhuma categoria encontrada para a string fornecida: " + text);
+    }
+
+    public static Categoria fromPortugues(String text) {
+        for (Categoria categoria : Categoria.values()) {
+            if (categoria.categoriaPortugues.equalsIgnoreCase(text)) {
                 return categoria;
             }
         }
