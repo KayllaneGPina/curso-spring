@@ -1,12 +1,14 @@
 package br.com.alura.screenmatch.model;
 
+import jakarta.persistence.Transient;
+
 public enum Categoria {
     ACAO("Action"),
     ROMANCE("Romance"),
     COMEDIA("Comedy"),
     DRAMA("Drama"),
-    CRIME("Crime");
-
+    CRIME("Crime"),
+    BIOGRAPHY("Biography");
     private String categoriaOmdb;
 
     Categoria(String categoriaOmdb) {
