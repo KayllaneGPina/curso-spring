@@ -7,6 +7,9 @@
 - Aprender sobre serialização e desserialização de dados (Jackson e Gson)
 - Funções Lambdas
 - Spring Data JPA
+- Spring Web MVC
+- Aprender sobre o padrão REST
+- Conhecer a arquitetura MVC
 
 ## Ferramentas 
 - Java 17
